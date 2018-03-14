@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Nuevo Propietario</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+  
+    
+    <form th:action="cargaPropietario" method="post">
+    
+    <br/>
+    	<div align="center">
+    		<h1>Propietario</h1>
+    			<br></br>
+		      <label>Nombre</label>
+		      <input type = "text" th:field = "${prop.nombre}"/>
+		      <br/>
+		      <br/>
+		      <label>Apellido</label>
+		      <input type = "text" th:field = "${prop.apellido}"/>
+		      <br/>
+		      <br/>
+		      <label>DNI</label>
+		      <input type = "number" th:field = "${prop.dni}"/>
+		      <br/>
+		      <br/>
+		      <label>Direccion</label>
+			  <input type="text" th:field="${prop.direccion}"/>
+			  <br/>
+		      <br/>
+			  <label>Telefono</label>
+			  <input type = "number" th:field = "${prop.telefono}"/>
+			  <!-- EN EL FIELD SELECCIONO CUAL VA A SER EL ATRIBUTO AL QUE SE LE VA A ASIGNAR LA SELECCIION
+			  EN EL VALUE VA EL ID DEL OBJETO (ES EL DATO QUE NECESITO UTILIZAR), Y EN EL TEXT
+			  VA EL DATO QUE QUIERO QUE SE VISUALICE -->
+		      <br/>
+		      <br/>
+      			<input type="submit" name="btn" value="Crear propietario"/>
+    	</div>
+      
+    </form>
+  </body>
+</html>

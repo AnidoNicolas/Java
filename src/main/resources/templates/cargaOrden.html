@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Nuevo Propietario</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+    <form th:action="cargaOrdenDeTrabajo" method="post">
+    <div align="center">
+	    <h1>Orden</h1>
+	    <br/>
+	      <label> Patente</label>
+	      <input type = "text" th:field = "${ord.nroPatente}"/>
+	      <br/>
+	      <br/>
+	      <label>Fecha de ingreso</label>
+	      <input type = "date" th:field = "${ord.fechaIngreso}"/>
+	      <br/>
+	      <br/>
+	      <label>Dni del propietario</label>
+	      <input type = "number" th:field = "${prop.dni}"/>
+	      <br/>
+	      <br/>
+	      <label>Marca</label>
+		  <input type="text" th:field="${ord.marca}"/>
+		  <br/>
+	      <br/>
+		  <label>Detalle</label>
+		  <input type = "text" th:field = "${ord.detalle}"/>
+		  <!-- EN EL FIELD SELECCIONO CUAL VA A SER EL ATRIBUTO AL QUE SE LE VA A ASIGNAR LA SELECCIION
+		  EN EL VALUE VA EL ID DEL OBJETO (ES EL DATO QUE NECESITO UTILIZAR), Y EN EL TEXT
+		  VA EL DATO QUE QUIERO QUE SE VISUALICE -->
+	      <br/>
+	      <br/>
+	      <input type="submit" name="btn" value="Dar de alta la orden"/>
+      </div>
+    </form>
+    
+  </body>
+</html>

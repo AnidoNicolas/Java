@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Nuevo Propietario</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+  
+    
+    <form th:action="agregarRepuesto" method="post">
+    <div class="container">
+    <label>Repuesto</label>
+    <br/>
+    	<select th:field="${repOrd.ordenDeTrabajo}" style="display: none">
+    		<option th:value="${ord.getId()}"></option>
+    		
+    	</select>
+   <select th:field="${repOrd.repuesto}">
+   			<option th:each="rep: ${lstRep}" th:value="${rep.getIdRepuesto()}" th:text="${rep.nombre}">Repuesto</option>
+   </select>
+      <label>Cantidad</label>
+      <input type = "text" th:field = "${repOrd.cantidad}"/>
+      <label>Mano de obra (HS. aprox.)</label>
+      <input type = "text" th:field = "${repOrd.hsManoDeObra}"/>
+      <br/>
+     
+	  <!-- EN EL FIELD SELECCIONO CUAL VA A SER EL ATRIBUTO AL QUE SE LE VA A ASIGNAR LA SELECCIION
+	  EN EL VALUE VA EL ID DEL OBJETO (ES EL DATO QUE NECESITO UTILIZAR), Y EN EL TEXT
+	  VA EL DATO QUE QUIERO QUE SE VISUALICE -->
+      <br/>
+      <br/>
+      <input type="submit" name="btn" value="Cargar Repuesto"/>
+      </div>
+    </form>
+  </body>
+</html>

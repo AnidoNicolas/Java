@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Cierre de Orden</title>
+  </head>
+  <body>
+  
+      <!-- LINK QUE ME LLEVA A /HOME Y MUESTRA EL NOMBRE
+      QUE SE ENCUENTRA EN EL TH:TEXT -->
+  <a th:href = "@{/home}" 
+  	 th:text = "'Volver al menu principal'"></a>
+  	  <!-- IMPRIMIMOS EL GUSTO DE HELADO QUE ENVIAMOS DESDE EL CONTROLLER -->
+  	  
+  	<table >
+  		<tr>
+  			<td>
+  				<a th:text="${ord.getDetalle()+' '+ord.getCosto()}"></a>
+  			</td>
+  		</tr>
+  	</table>
+ 
+  </body>
+</html>

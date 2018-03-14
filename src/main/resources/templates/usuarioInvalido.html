@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Operacion Fallida</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+  	<div align="center">
+  		<h1>Error: El dni con el que intenta registrarse ya se encuentra en uso</h1>
+  		<h1>Como desea seguir con la operacion?</h1>
+  		<hr></hr>
+  		<hr></hr>
+  		<a th:href = "@{/cargaPropietario}"><button>Cargar un nuevo propietario</button></a>
+  		<a th:href = "@{/home}"><button>Volver al menu principal</button></a>
+  	</div>
+  	
+	
+  </body>
+</html>

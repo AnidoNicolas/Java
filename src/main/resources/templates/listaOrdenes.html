@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Seleccion de repuestos</title>
+  </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  	<link rel="stylesheet" type="text/css" href="estilos.css"></link>
+  <body>
+	<form th:action="agregarRepuesto" method="Post">
+	    <h1 align="center">Orden De Trabajo</h1>
+	    <br/>
+	    <div class="container" align="center">
+	      <table class="table">
+	  		<tr>	
+	  			<th style="width: 10%">Id</th>
+	  			<th style="width: 40%">Detalle</th>
+	  			<th style="width: 40%">Propietario</th>
+	  			<th></th>
+	  			<th></th>
+	  		</tr>
+	  		
+	  		<tr th:each = "ord: ${lstOrd}">
+	  			<th th:text = "${ord.getId()}+'  '"></th>
+	  			<th th:text = "${ord.getDetalle()}+'  '"></th>
+	  			<th th:text = "${ord.getPropietario().getNombre()}+'  '+${ord.getPropietario().getApellido()}"></th>
+	  			<td><a th:href="@{/agregarRepuesto(idOrd=${ord.getId()})}"><button type="button" class="btn btn-primary btn-sm">Cargar Repuesto</button></a></td>
+	  			<td><a th:href="@{/detalle(idOrd=${ord.getId()})}"><button type="button" class="btn btn-danger btn-sm">Detalle</button></a></td>
+	  			<td><a th:href="@{/cerrarOrden(idOrd=${ord.getId()})}"><button type="button" class="btn btn-danger btn-sm">Cerrar Orden</button></a></td>
+	  		
+	  		</tr>
+	  	</table>
+	  	
+	  	
+	  	<a th:href="@{/home}"><button type="button" class="btn btn-warning btn-sm">Volver al Menu Principal</button>l</a>
+	  	</div>
+		  <!-- EN EL FIELD SELECCIONO CUAL VA A SER EL ATRIBUTO AL QUE SE LE VA A ASIGNAR LA SELECCIION
+		  EN EL VALUE VA EL ID DEL OBJETO (ES EL DATO QUE NECESITO UTILIZAR), Y EN EL TEXT
+		  VA EL DATO QUE QUIERO QUE SE VISUALICE -->
+	      <br/>
+	      <br/>
+	      
+	    </form>
+  </body>
+</html>

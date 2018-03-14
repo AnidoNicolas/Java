@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Menu</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+  	<div align="center">
+  	
+	  		<h1>TALLER MECANICO</h1>
+	  		<hr></hr>
+	  		<hr></hr>
+	  		<div align="center">
+	  		<a th:href = "@{/cargaPropietario}"><button type="button" class="btn btn-warning btn-md">Nuevo Propietario</button></a>
+	  		<br></br>
+	  		<br></br>
+	  		
+	  		<a th:href= "@{/cargaOrdenDeTrabajo}"><button type="button" class="btn btn-warning btn-md">Nueva Orden De Trabajo</button></a>
+	  		<br></br>
+	  		<br></br>
+	  		
+	  		<a th:href="@{/listaOrdenes}"><button type="button" class="btn btn-warning btn-md">Gestionar Ordenes Existentes</button></a>
+	  		<br></br>
+	  		<br></br>
+	  		<a th:href="@{/listaOrdenesCerradas}"><button type="button" class="btn btn-warning btn-md">Ordenes De Trabajo Finalizadas</button></a>
+	  		<br></br>
+	  		<br></br>
+  		</div>
+  	</div>
+  	
+	
+  </body>
+</html>

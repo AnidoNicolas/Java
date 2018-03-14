@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Orden Cerrada!</title>
+  </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+  <body>
+		<h1>Datos finales de la orden:</h1>
+	
+	    <br/>
+	    <div class="container">
+	      <table class="table">
+	  		<tr>
+	  			<td><strong>Id</strong></td>
+	  			<td><strong>Detalle</strong></td>
+	  			<td><strong>NroPatente</strong></td>
+	  			<td><strong>Marca</strong></td>
+	  			<td><strong>Fecha De Ingreso</strong></td>
+	  			<td><strong>Propietario</strong></td>
+	  			<td><strong>Costo</strong></td>
+	  			
+	  		</tr>
+	  		<tr >
+	  			<td th:text = "'  '+${ord.getId()}+'  '"></td>
+	  			<td th:text = "'  '+${ord.getDetalle()}+'  '"></td>
+	  			<td th:text = "'  '+${ord.getNroPatente()}+'  '"></td>
+	  			<td th:text = "'  '+${ord.getMarca()}+'  '"></td>
+	  			<td th:text = "'  '+${ord.getFechaIngreso()}+'  '"></td>
+	  			<td th:text = "'  '+${ord.getPropietario().getNombre()}+'  '+${ord.getPropietario().getApellido()}"></td>
+	  			<td th:text = "'  '+${ord.getCosto()}+'  '"></td>
+	  			
+	  		
+	  		</tr>
+	  	</table>
+	  	
+	  	<a th:href="@{/home}">Volver al menu principal</a>
+		  <!-- EN EL FIELD SELECCIONO CUAL VA A SER EL ATRIBUTO AL QUE SE LE VA A ASIGNAR LA SELECCIION
+		  EN EL VALUE VA EL ID DEL OBJETO (ES EL DATO QUE NECESITO UTILIZAR), Y EN EL TEXT
+		  VA EL DATO QUE QUIERO QUE SE VISUALICE -->
+	      <br/>
+	      <br/>	  
+	    </div> 
+  </body>
+</html>
